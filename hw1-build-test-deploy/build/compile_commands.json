@@ -1,0 +1,25 @@
+[
+{
+  "directory": "/home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/build",
+  "command": "/usr/bin/c++  -DBOOST_ALL_NO_LIB -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -I.  -g   -std=gnu++11 -o CMakeFiles/test_version.dir/test_version.cpp.o -c /home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/test_version.cpp",
+  "file": "/home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/test_version.cpp"
+},
+
+{
+  "directory": "/home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/build",
+  "command": "/usr/bin/c++   -I.  -g   -o CMakeFiles/helloworld.dir/lib.cpp.o -c /home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/lib.cpp",
+  "file": "/home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/lib.cpp"
+},
+
+{
+  "directory": "/home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/build",
+  "command": "/usr/bin/c++   -I.  -g   -std=gnu++11 -o CMakeFiles/helloworld_cli.dir/main.cpp.o -c /home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/main.cpp",
+  "file": "/home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/main.cpp"
+},
+
+{
+  "directory": "/home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/build",
+  "command": "/usr/bin/c++   -I.  -g   -std=gnu++11 -o CMakeFiles/helloworld_cli.dir/lib.cpp.o -c /home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/lib.cpp",
+  "file": "/home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/lib.cpp"
+}
+]
