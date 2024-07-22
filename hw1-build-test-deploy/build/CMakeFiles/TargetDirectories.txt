@@ -1,6 +1,0 @@
-/home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/build/CMakeFiles/rebuild_cache.dir
-/home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/build/CMakeFiles/edit_cache.dir
-/home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/build/CMakeFiles/test.dir
-/home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/build/CMakeFiles/test_version.dir
-/home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/build/CMakeFiles/helloworld.dir
-/home/obi/Develop/otus-cpp-developer-professional/hw1-build-test-deploy/build/CMakeFiles/helloworld_cli.dir
