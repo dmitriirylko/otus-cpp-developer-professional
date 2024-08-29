@@ -19,9 +19,8 @@ jobs:
         with:
           submodules: true
       - run: sudo apt-get update && sudo apt-get install libgtest-dev libgmock-dev && sudo apt-get install libtbb-dev
-      - run: cmake ./hw2-ip-filtering -DWITH_GTEST=ON
+      - run: cmake ./hw3-allocator
       - run: cmake --build .
-      - run: cmake --build . --target test
       - run: cmake --build . --target package
       - name: Create Release
         id: create_release
@@ -40,6 +39,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./ip_filter-${{ github.ref_name }}-Linux.deb
-          asset_name: ip_filter-${{ github.ref_name }}-Linux.deb
+          asset_path: ./allocator-${{ github.ref_name }}-Linux.deb
+          asset_name: allocator-${{ github.ref_name }}-Linux.deb
           asset_content_type: application/vnd.debian.binary-package
