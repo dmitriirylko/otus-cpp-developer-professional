@@ -36,16 +36,39 @@ std::vector<std::string> Reader::split(const std::string &str, char d)
 IpAddrPool Reader::getPool()
 {
     IpAddrPool ipPool;
+    std::array<int, IpAddr::length> ipAddrNumbers;
     for(std::string line; std::getline(std::cin, line);)
     {
         auto splittedLine = split(line, '\t');
+        if(splittedLine.size() != 3)
+        {
+            throw std::runtime_error("Can not parse line (split by '\\t'): " + line);
+        }
         auto splittedIpAddr = split(splittedLine.at(0), '.');
-        ipPool.pushBack({
-            static_cast<uint8_t>(std::stoi(splittedIpAddr[0])),
-            static_cast<uint8_t>(std::stoi(splittedIpAddr[1])),
-            static_cast<uint8_t>(std::stoi(splittedIpAddr[2])),
-            static_cast<uint8_t>(std::stoi(splittedIpAddr[3]))
-        });
+        if(splittedIpAddr.size() != 4)
+        {
+            throw std::runtime_error("Can not parse ip addr string (split by '.'): " + splittedLine.at(0));
+        }
+        try
+        {
+            for(size_t i = 0; i < IpAddr::length; ++i)
+            {
+                ipAddrNumbers[i] = std::stoi(splittedIpAddr[i]);
+                if(ipAddrNumbers[i] > std::numeric_limits<uint8_t>::max() ||
+                   ipAddrNumbers[i] < std::numeric_limits<uint8_t>::min())
+                {
+                    throw std::runtime_error("");
+                }
+            }
+            ipPool.emplaceBack(static_cast<uint8_t>(ipAddrNumbers[0]),
+                               static_cast<uint8_t>(ipAddrNumbers[1]),
+                               static_cast<uint8_t>(ipAddrNumbers[2]),
+                               static_cast<uint8_t>(ipAddrNumbers[3]));
+        }
+        catch(const std::exception& e)
+        {
+            throw std::runtime_error("Can not parse ip addr (invalid conversion from string to uint8_t): " + splittedLine.at(0));
+        }
     }
     return ipPool;
 }

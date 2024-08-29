@@ -10,18 +10,18 @@ struct ip_filter_fixture : public testing::Test
 {
     ip_filter_fixture()
     {
-        ipPoolSorted.pushBack(1, 1, 1, 1);
-        ipPoolSorted.pushBack(1, 2, 1, 1);
-        ipPoolSorted.pushBack(1, 2, 2, 1);
-        ipPoolSorted.pushBack(1, 2, 2, 10);
+        ipPoolSorted.emplaceBack(1, 1, 1, 1);
+        ipPoolSorted.emplaceBack(1, 2, 1, 1);
+        ipPoolSorted.emplaceBack(1, 2, 2, 1);
+        ipPoolSorted.emplaceBack(1, 2, 2, 10);
 
-        ipPoolSorted.pushBack(46, 70, 1, 1);
-        ipPoolSorted.pushBack(46, 70, 10, 1);
-        ipPoolSorted.pushBack(46, 70, 10, 3);
-        ipPoolSorted.pushBack(46, 70, 100, 100);
+        ipPoolSorted.emplaceBack(46, 70, 1, 1);
+        ipPoolSorted.emplaceBack(46, 70, 10, 1);
+        ipPoolSorted.emplaceBack(46, 70, 10, 3);
+        ipPoolSorted.emplaceBack(46, 70, 100, 100);
 
-        ipPoolSorted.pushBack(127, 0, 0, 46);
-        ipPoolSorted.pushBack(12, 46, 0, 1);
+        ipPoolSorted.emplaceBack(127, 0, 0, 46);
+        ipPoolSorted.emplaceBack(12, 46, 0, 1);
 
         ipPoolSorted.sortDescending();
     }
