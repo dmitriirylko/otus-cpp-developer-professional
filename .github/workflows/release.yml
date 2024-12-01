@@ -18,7 +18,8 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - run: cmake ./hw9-multithreading
+      - run: sudo apt-get update && sudo apt-get install libboost-all-dev
+      - run: cmake ./hw10-async-server
       - run: cmake --build .
       - run: cmake --build . --target package
       - name: Create Release
@@ -38,6 +39,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./async-${{ github.ref_name }}-Linux.deb
-          asset_name: async-${{ github.ref_name }}-Linux.deb
+          asset_path: ./bulk_server-${{ github.ref_name }}-Linux.deb
+          asset_name: bulk_server-${{ github.ref_name }}-Linux.deb
           asset_content_type: application/vnd.debian.binary-package
