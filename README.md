@@ -76,3 +76,25 @@ bulk_server <port_number> <block_size>
 ```
 nc localhost <port_number> 
 ```
+
+# ДЗ №12. MapReduce
+Вычисляем математичесткое ожидание и дисперсию цен на недвижимость датасета [New York City Airbnb Open Data](https://www.kaggle.com/datasets/dgomonov/new-york-city-airbnb-open-data?resource=download) в парадигме MapReduce. 
+
+## Установка и запуск
+Соберите проект
+```
+make clean
+```
+```
+make all
+```
+В результате в папке `bin` появятся четыре исполяемый файла - `mapper_mean` и `reducer_mean` вычислят математическое ожидание, а `mapper_var` и `reducer_var` - дисперсию.
+Для запуска вычисления математического ожидания воспользуйтесь скриптом `run_locally_mean.sh`
+```
+./run_locally_mean.sh
+```
+Значеие математического ожидания выведется в консоль и сохранится в файле `output_mean`. Файл со значением математического ожидания необходим для следующего этапа - вычисления дисперсии:
+```
+./run_locally_var.sh
+```
+Аналогично, значение дисперсии выведется в консоль и сохранится в файле `output_var`.
