@@ -98,3 +98,30 @@ make all
 ./run_locally_var.sh
 ```
 Аналогично, значение дисперсии выведется в консоль и сохранится в файле `output_var`.
+
+# ДЗ №13. Компьютерное зрение
+Проект реализует инференс модели компьютерного зрения для классификации изображений датасета Fashion MNIST. Модель представляет собой сверточную нейронную сеть, реализованную с помощью библиотеки Tensorflow. Модель сохранена в стандартном для библиотеки Tensorflow 
+представлении.
+
+## Установка и запуск
+Для запустка .deb пакета `fashio_mnist` в качестве зависимости необходима библиотека [Tensorflow с C API](https://www.tensorflow.org/install/lang_c), установленная по стандартному пути
+```
+curl -L -O https://storage.googleapis.com/tensorflow/versions/2.18.0/libtensorflow-cpu-linux-x86_64.tar.gz
+```
+```
+sudo tar -C /usr/local -xzf libtensorflow-cpu-linux-x86_64.tar.gz
+```
+```
+sudo ldconfig /usr/local/lib
+```
+Скачайте и установите .deb пакет, соответствующий релизу 0.13.x.:
+```
+sudo dpkg -i fashio_mnist-0.13.0-Linux.deb 
+```
+Запустите исполняемый файл со следующими параметрами
+```
+fashio_mnist <test_data> <model>
+```
+где:
+*   `test_data`: путь .csv файла с тестовыми данными.
+*   `model`: путь директории с моделью Tensorflow.
